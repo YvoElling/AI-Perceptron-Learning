@@ -10,7 +10,7 @@ public class PerceptronLearner {
      * the output. 
      * 
      * @param positive the positive classifier for training
-     * @param negative the negative classifier for tarining
+     * @param negative the negative classifier for training
      * @param bias whether a bias is required for the dataset
      * @param maxIterations maximum of allowed iterations
      * @param queries list of points who generate the output
@@ -47,7 +47,9 @@ public class PerceptronLearner {
         
         //Iterate at most until we have reached our limit
         while ( iterations < maxIterations) {
-            //If boolean is set to true, then we know that training set is correct 
+            //If boolean is set to true, then we know that training set is correct
+            //hence, if not set to false in the body of this while loop, then
+            //we know that all classifiers were placed in the correct set
             boolean done = true;
             
             //Iterate over all datapoints in @positive
@@ -79,7 +81,8 @@ public class PerceptronLearner {
                 }
             }
             
-            //new iteration passed
+            //we require another iterations, keep track of the amount of
+            //iterations that have been performed yet
             iterations++;
         
             //If the boolean was not set to false (i.e. no incorrect value
